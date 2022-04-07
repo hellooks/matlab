@@ -1,0 +1,249 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>PlanckLocus</title><meta name="generator" content="MATLAB 9.10"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-02-12"><meta name="DC.source" content="PlanckLocus.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>PlanckLocus</h1><!--introduction--><p>
+ <p style="font-size:75%;">Navigate to: &nbsp;
+<a href="JMOSpectrumLibrary.html"> Home</a> &nbsp; | &nbsp;
+<a href="AlphabeticList.html"> Alphabetic list</a> &nbsp; | &nbsp;
+<a href="GroupedList.html"> Grouped list</a> &nbsp; | &nbsp;
+Source code: <a href = "file:../PlanckLocus.m"> PlanckLocus.m</a>
+</p>
+</p><p>Computes the Planck locus (i.e. the color points of blackbody radiators) in various color spaces, and provides helper functions to compute Judd lines.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Input Arguments</a></li><li><a href="#3">Output Arguments</a></li><li><a href="#4">Algorithm</a></li><li><a href="#5">See also</a></li><li><a href="#6">Usage Example</a></li></ul></div><h2 id="1">Syntax</h2><p><tt>rv = PlanckLocus()</tt></p><h2 id="2">Input Arguments</h2><p>none</p><h2 id="3">Output Arguments</h2><div><ul><li><tt>rv</tt>: A struct with fields</li></ul></div><div><ol><li><tt>nT</tt>: scalar integer: the number of data points (1001)</li><li><tt>T</tt>: Array of double, length <tt>nT</tt>: the absolute temperatures</li><li><tt>invT</tt>: Array of double, length <tt>nT</tt>: the inverse absolute temperatures. Data points range from 500 K to 1e+11 K, equidistant in 1/T.</li><li><tt>x</tt>: Array of double, length <tt>nT</tt>: The CIE 1931 x coordinates.</li><li><tt>y</tt>: Array of double, length <tt>nT</tt>: The CIE 1931 y coordinates.</li><li><tt>u</tt>: Array of double, length <tt>nT</tt>: The CIE 1960 u coordinates.</li><li><tt>v</tt>: Array of double, length <tt>nT</tt>: The CIE 1960 v coordinates.</li><li><tt>up</tt>: Array of double, length <tt>nT</tt>: The CIE 1976 u' coordinates.</li><li><tt>vp</tt>: Array of double, length <tt>nT</tt>: The CIE 1976 v' coordinates.</li><li><tt>xy_func</tt>: Handle to function with signature <tt>rv2 = rv.xy_func(T)</tt>, Input <tt>T</tt>: Vector of double: the absolute temperatures for which color coordinates shall be computed. Output <tt>rv2</tt>: Matrix of double, size <tt>[length/T),2]</tt>. The first/second column contains the CIE x/y coordinates corresponding to the values in T.</li><li><tt>uv_func</tt>: Handle to function with signature <tt>rv3 = rv.xy_func(T)</tt>, Input <tt>T</tt>: Vector of double: the absolute temperatures for which color coordinates shall be computed. Output <tt>rv3</tt>: Matrix of double, size <tt>[length/T),2]</tt>. The first/second column contains the CIE 1960 u/v coordinates corresponding to the values in T.</li><li><tt>spline_u</tt>: Struct containing the interpolating spline interpolation data for CIE 1960 u as function of inverse absolute temperature. See Matlab's <tt>spline</tt> function for details on the fields and properties of this spline object, and Matlab's <tt>ppval</tt> function on how to use it.</li><li><tt>spline_v</tt>: Same for CIE 1960 v.</li><li><tt>spline_du_dinvT</tt>: Interpolating spline struct for the derivative of CIE 1906 u as function of inverse absolute temperature. This is the analytical derivative of the spline interpolating function modeling CIE 1960 u.</li><li><tt>spline_dv_dinvT</tt>: Same for CIE 1960 v. Together with <tt>spline_du_dinvT</tt>, this interpolating spline struct allows to compute tangents and normals to the Planck locus in CIE 1960 uv.</li><li><tt>JuddLine_func</tt>: Handle to function with signature <tt>rv4 = rv.JuddLine_func(T)</tt>. Input <tt>T</tt>: Scalar real. Output <tt>rv4</tt>: struct with fields <tt>u</tt>, <tt>v</tt> (the CIE 1960 uv coordinates corresponding to <tt>T</tt>), and <tt>du</tt>, <tt>dv</tt>, the coordinates of the Judd line direction unit vector, towards green.</li></ol></div><h2 id="4">Algorithm</h2><p>Computes the Planck blackbody spectra for all 1001 absolute temperatures, with their CIE 1931 XYZ values, and computes the other data fields. The Judd lines, along which the distance to the Planck locus is computed for correlated color temperature, are defined as the normal vectors to the Planck locus curve in the otherwise deprecated CIE 1960 color coordinate system. The function handles forward their arguments to Matlab's <tt>interp1</tt> function. The spline interpolation data structures are computed using Matlab's <tt>spline</tt> function, and the analytical derivates using the <tt>ipp_deriv</tt> helper function of this library.</p><p>The time intensive computations are done only once per Matlab session. The results are stored in a persistent variable; subsequent calls will not incur the overhead.</p><h2 id="5">See also</h2><p><a href="PlanckSpectrum.html">PlanckSpectrum</a>, <a href="CIE1931_XYZ.html">CIE1931_XYZ</a>, <a href="CCT.html">CCT</a></p><h2 id="6">Usage Example</h2><pre class="language-matlab">
+<span class="keyword">function</span> ExamplePlanckLocus()
+    pl = PlanckLocus();
+    fh = figure();clf;
+    PlotCIExyBorder(<span class="string">'Figure'</span>,fh);
+    hold <span class="string">on</span>;
+    T = [1000 2000 3000 4000 5000 6000];
+    xy = pl.xy_func(T);
+    scatter(xy(:,1),xy(:,2));
+    plot(pl.x,pl.y);
+    axis <span class="string">equal</span>;
+    grid <span class="string">on</span>;
+    axis([-0.05 0.9 -0.05 0.9]);
+    xlabel(<span class="string">'CIE x'</span>);
+    ylabel(<span class="string">'CIE y'</span>);
+    title(<span class="string">'CIE xy border and Planck locus demo'</span>)
+<span class="keyword">end</span>
+
+</pre><img vspace="5" hspace="5" src="PlanckLocus_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% PlanckLocus
+% 
+% <html>
+%  <p style="font-size:75%;">Navigate to: &nbsp; 
+% <a href="JMOSpectrumLibrary.html"> Home</a> &nbsp; | &nbsp;
+% <a href="AlphabeticList.html"> Alphabetic list</a> &nbsp; | &nbsp; 
+% <a href="GroupedList.html"> Grouped list</a> &nbsp; | &nbsp; 
+% Source code: <a href = "file:../PlanckLocus.m"> PlanckLocus.m</a>
+% </p>
+% </html>
+%
+% Computes the Planck locus (i.e. the color points of blackbody radiators) in various color
+% spaces, and provides helper functions to compute Judd lines.
+%
+%% Syntax
+% |rv = PlanckLocus()|
+%% Input Arguments
+% none
+
+%% Output Arguments
+% * |rv|: A struct with fields
+%
+% # |nT|: scalar integer: the number of data points (1001)
+% # |T|: Array of double, length |nT|: the absolute temperatures
+% # |invT|: Array of double, length |nT|: the inverse absolute temperatures. Data points
+% range from 500 K to 1e+11 K, equidistant in 1/T. 
+% # |x|: Array of double, length |nT|: The CIE 1931 x coordinates.
+% # |y|: Array of double, length |nT|: The CIE 1931 y coordinates.
+% # |u|: Array of double, length |nT|: The CIE 1960 u coordinates.
+% # |v|: Array of double, length |nT|: The CIE 1960 v coordinates.
+% # |up|: Array of double, length |nT|: The CIE 1976 u' coordinates.
+% # |vp|: Array of double, length |nT|: The CIE 1976 v' coordinates.
+% # |xy_func|: Handle to function with signature |rv2 = rv.xy_func(T)|, Input |T|: Vector of
+% double: the absolute temperatures for which color coordinates shall be computed. Output
+% |rv2|: Matrix of double, size |[length/T),2]|. The first/second column contains the CIE x/y coordinates 
+% corresponding to the values in T.
+% # |uv_func|: Handle to function with signature |rv3 = rv.xy_func(T)|, Input |T|: Vector of
+% double: the absolute temperatures for which color coordinates shall be computed. Output
+% |rv3|: Matrix of double, size |[length/T),2]|. The first/second column contains the CIE 1960 u/v coordinates 
+% corresponding to the values in T.
+% # |spline_u|: Struct containing the interpolating spline interpolation data for CIE 1960 u
+% as function of inverse absolute temperature. See Matlab's |spline| function for details on
+% the fields and properties of this spline object, and Matlab's |ppval| function on how to
+% use it.
+% # |spline_v|: Same for CIE 1960 v.
+% # |spline_du_dinvT|: Interpolating spline struct for the derivative of CIE 1906 u as
+% function of inverse absolute temperature. This is the analytical derivative of the spline
+% interpolating function modeling CIE 1960 u.
+% # |spline_dv_dinvT|: Same for CIE 1960 v. Together with |spline_du_dinvT|, this
+% interpolating spline struct allows to compute tangents and normals to the Planck locus in
+% CIE 1960 uv.
+% # |JuddLine_func|: Handle to function with signature |rv4 = rv.JuddLine_func(T)|. Input
+% |T|: Scalar real. Output |rv4|: struct with fields |u|, |v| (the CIE 1960 uv coordinates
+% corresponding to |T|), and |du|, |dv|, the coordinates of the Judd line direction unit
+% vector, towards green.
+%% Algorithm
+% Computes the Planck blackbody spectra for all 1001 absolute temperatures, with their CIE
+% 1931 XYZ values, and computes the other data fields. The Judd lines, along which the
+% distance to the Planck locus is computed for correlated color temperature, are defined as
+% the normal vectors to the Planck locus curve in the otherwise deprecated CIE 1960 color
+% coordinate system. 
+% The function handles forward their
+% arguments to Matlab's |interp1| function. The spline interpolation data structures are
+% computed using Matlab's |spline| function, and the analytical derivates using the
+% |ipp_deriv| helper function of this library.
+% 
+% The time intensive computations are done only once per Matlab session. The results are
+% stored in a persistent variable; subsequent calls will not incur the overhead. 
+%% See also
+% <PlanckSpectrum.html PlanckSpectrum>, <CIE1931_XYZ.html CIE1931_XYZ>, <CCT.html CCT>
+%% Usage Example
+% <include>Examples/ExamplePlanckLocus.m</include>
+
+% publish with publishWithStandardExample('filename.m') in PublishDocumentation.m
+
+% JMO Spectrum Library, 2021. See https://github.com/JuliusMuschaweck/JMO_Spectrum
+% I dedicate the JMO_Spectrum library to the public domain under Creative Commons Zero 
+% (https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+%
+function rv = PlanckLocus()
+    % Output: struct with size 1000 vectors T, invT, x, y, u, v, up, vp
+    % equidistant in 1/T from 500K to 1e11K
+    % plus: field xy_func(T) which accepts also row vector T
+    %       xy_func(T) returns matrix size (length(T),2) with x,y values
+    % plus: field uv_func(T) which accepts also row vector T
+    %       uv_func(T) returns matrix size (length(T),2) with u,v values
+    % plus: field JuddLine_func(T) which accepts scalar T
+    %       returns struct with fields u,v,du,dv. norm([du dv]) == 1
+    % plus: piecewise cubic polynomial objects (see help for spline and pchip)
+    %   spline_u, spline_v, spline_du_invT, spline_dv_invT to be used e.g for CCT
+    
+    persistent PlanckLocus_;
+    if ~isempty(PlanckLocus_)
+        rv = PlanckLocus_;
+        return;
+    end
+    nT = 1001;
+    PlanckLocus_.nT = nT;
+    
+    Tmin = 500;
+    Tmax = 1e11;
+    PlanckLocus_.invT = linspace(1/Tmax,1/Tmin,nT);
+    PlanckLocus_.T = (1 ./ PlanckLocus_.invT);
+    
+    PlanckLocus_.x = zeros(1,nT);
+    PlanckLocus_.y = zeros(1,nT);
+    PlanckLocus_.u = zeros(1,nT);
+    PlanckLocus_.v = zeros(1,nT);
+    PlanckLocus_.up = zeros(1,nT);
+    PlanckLocus_.vp = zeros(1,nT);
+    
+    for i = 1:nT
+        ps = PlanckSpectrum(360:830,PlanckLocus_.T(i));
+        x = ps.XYZ.x;
+        y = ps.XYZ.y;
+        PlanckLocus_.x(i) = x;
+        PlanckLocus_.y(i) = y;
+        den = -2*x + 12*y + 3;
+        PlanckLocus_.u(i) = 4 * x / den;
+        PlanckLocus_.up(i) = PlanckLocus_.u(i);
+        PlanckLocus_.v(i) = 6 * y / den;
+        PlanckLocus_.vp(i) = 9 * y / den;
+    end
+    PlanckLocus_.xy_func = @(T) interp1(PlanckLocus_.invT',cat(2,(PlanckLocus_.x)',(PlanckLocus_.y)'),1./T);
+    PlanckLocus_.uv_func = @(T) interp1(PlanckLocus_.invT',cat(2,(PlanckLocus_.u)',(PlanckLocus_.v)'),1./T);
+    
+    PlanckLocus_.spline_u = spline(PlanckLocus_.invT,PlanckLocus_.u);
+    PlanckLocus_.spline_v = spline(PlanckLocus_.invT,PlanckLocus_.v);
+    
+    PlanckLocus_.spline_du_dinvT = ipp_deriv(PlanckLocus_.spline_u);
+    PlanckLocus_.spline_dv_dinvT = ipp_deriv(PlanckLocus_.spline_v);
+
+    PlanckLocus_.JuddLine_func = @(T) JuddLine(T, PlanckLocus_);
+    
+    rv = PlanckLocus_;
+end
+%%
+
+function Juv = JuddLine(T, pl)
+    tmp =  pl.uv_func(T);
+    Juv.u = tmp(1);
+    Juv.v = tmp(2);
+    invT = 1/T;
+    tangent_u = ppval(pl.spline_du_dinvT,invT); % in invT direction
+    tangent_v = ppval(pl.spline_dv_dinvT,invT);
+    len = norm([tangent_u,tangent_v]);
+    Juv.du = - tangent_v/len;
+    Juv.dv = tangent_u/len;
+end
+
+
+##### SOURCE END #####
+--></body></html>
